@@ -30,15 +30,16 @@ def uncommon_word_map(texts):
     # Write your code here
     
     commonwordsLines = []
-    with open("commonwords.txt", "r") as file1:
-        commonwordsLines = file1.read().splitlines() 
+    file1 = open('commonwords.txt', 'r')
+
+    commonwordsLines = file1.read().splitlines() 
     wordmapDic = {}
     # pre-porcess the list
     wordList = []
     for text in texts:
         oneList = text.split(" ")
         wordList.extend(oneList)
-    # add to the dictionary
+    # add to the dictionary 
     for word in wordList:
         word = word.lower()
         if word not in commonwordsLines:
@@ -74,9 +75,12 @@ def check_uncommon_word_map():
     for key in sorted(result.keys()):
         print(key, ":", result[key])
 
+import os
 
 def main():
     # check_word_map()
+    cwd = os.getcwd()
+    print(cwd)
     check_uncommon_word_map()
 
 
