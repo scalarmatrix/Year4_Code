@@ -54,15 +54,16 @@ def uncommon_word_map(texts):
 
 def check_word_map():
     texts = ["",
-        "Life is like Machine Learning  ",
+        "  Life is like Machine  Learning    ",
         "We are learning from experience"]
     result = word_map(texts)
     for key in sorted(result.keys()):
         print(key, ":", result[key])
 
 def check_word_map2():
-    texts = [""]
+    texts = [" "]
     result = word_map(texts)
+    print(result)
     for key in sorted(result.keys()):
         print(key, ":", result[key])
 
@@ -75,13 +76,17 @@ def check_uncommon_word_map():
     for key in sorted(result.keys()):
         print(key, ":", result[key])
 
-import os
+def check_uncommon_word_map2():
+    texts = [" "]
+    result = uncommon_word_map(texts)
+    print(result)
+    for key in sorted(result.keys()):
+        print(key, ":", result[key])
 
 def main():
     # check_word_map()
-    cwd = os.getcwd()
-    print(cwd)
-    check_uncommon_word_map()
+    check_uncommon_word_map2()
+
 
 
 if __name__ == "__main__":
